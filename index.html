@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Soal Logika Gelas</title>
+  <style>
+    :root {
+      --ungu: #6a1b9a;
+      --putih: #ffffff;
+      --hitam: #212121;
+      --ungu-muda: #ede7f6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--ungu-muda);
+      color: var(--hitam);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: var(--putih);
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      color: var(--ungu);
+    }
+
+    p, ul {
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+
+    textarea {
+      width: 100%;
+      height: 120px;
+      border: 2px solid var(--ungu);
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 1rem;
+      resize: vertical;
+      background-color: var(--putih);
+      color: var(--hitam);
+      margin-top: 10px;
+    }
+
+    button {
+      margin-top: 16px;
+      width: 100%;
+      background-color: var(--ungu);
+      color: var(--putih);
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #4a148c;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 16px;
+      }
+
+      h1 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Soal Logika Pertukaran Gelas</h1>
+    <p>Kamu memiliki dua gelas:</p>
+    <ul>
+      <li>Gelas A berisi <strong>jus jeruk</strong></li>
+      <li>Gelas B berisi <strong>susu</strong></li>
+    </ul>
+    <p>Tugasmu adalah menukar isi kedua gelas tersebut sehingga:</p>
+    <ul>
+      <li>Gelas A berisi <strong>susu</strong></li>
+      <li>Gelas B berisi <strong>jus jeruk</strong></li>
+    </ul>
+    <p><strong>Syarat:</strong> Tidak boleh mencampur isi gelas.</p>
+
+    <label for="jawaban">Jawabanmu:</label>
+    <textarea id="jawaban" placeholder="Tulis langkah-langkahmu di sini..."></textarea>
+    <button onclick="kirimEmail()">Kirim Jawaban ke Email</button>
+  </div>
+
+  <script>
+    function kirimEmail() {
+      const jawaban = document.getElementById('jawaban').value.trim();
+      if (!jawaban) {
+        alert('Silakan isi jawaban terlebih dahulu.');
+        return;
+      }
+      const email = 'agus11082007@gmail.com';
+      const subject = encodeURIComponent('Jawaban Soal Logika Pertukaran Gelas');
+      const body = encodeURIComponent(jawaban);
+      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>
